@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head itemscope itemtype="http://schema.org/WebPage">
+        <base href="http://ggajos.com/how-hibernate-ruined-my-career"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="If you are looking for interesting articles from IT space, a fresh perspective on IT business, software quality or interesting tips in a day to day work, this blog might be interesting to you. Today, ...">
+        <meta name="keywords" content="java, hibernate" />
+        <link rel="canonical" href="http://ggajos.com/how-hibernate-ruined-my-career" />
+        <link rel="alternate" type="application/rss+xml" title="RSS for ggajos.com" href="http://ggajos.com/rss.xml"/>
+        <title>How Hibernate Almost Ruined My Career</title>
+        <!--twitter -->
+        <meta name="twitter:site" content="@ggajos"/>
+        <meta name="twitter:creator" content="@ggajos"/>
+        <meta name="twitter:url" content="http://ggajos.com/how-hibernate-ruined-my-career"/>
+        <!-- facebook -->
+        <meta property="article:author" content="https://www.facebook.com/grzegorz.gajos"/>
+        <meta property="og:url" content="http://ggajos.com/how-hibernate-ruined-my-career"/>
+        <meta property="og:site_name" content="ggajos"/>
+        <meta property="og:title" content="How Hibernate Almost Ruined My Career"/>
+        <meta property="og:description" content="If you are looking for interesting articles from IT space, a fresh perspective on IT business, software quality or interesting tips in a day to day work, this blog might be interesting to you. Today, ..."/>
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_US" />
+        <!-- itemprop -->
+        <meta itemprop="name" content="How Hibernate Almost Ruined My Career" />
+        <meta itemprop="author" content="Grzegorz Gajos" />
+        <meta itemprop="breadcrumb" content="http://ggajos.com" />
+        <meta itemprop="keywords" content="java, hibernate" />
+        <meta itemprop="description" content="If you are looking for interesting articles from IT space, a fresh perspective on IT business, software quality or interesting tips in a day to day work, this blog might be interesting to you. Today, ..." />
+		<!-- google -->
+		<meta name="google-site-verification" content="Ls52KLW0k11NkXeBx89rhcLnXOfGbaDlNSCkGawXcM4" />
+        <!-- script/css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.css?">
+        <script async src="/assets/js/modernizr.js"></script>
+        <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <![endif]-->
+        <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+    </head>
+    <body class="theme-base-01">
+        <header class="main-header">
+            <div class="wc-container">
+                <h2><a href="/">Java Developer</a></h2>
+                <ul>
+	<li>
+		by <a href="http://ggajos.com/about">Grzegorz Gajos</a> &middot;
+	</li>
+	<li>
+		check <a href="http://ggajos.com/rss.xml">rss feed</a> &middot;
+	</li>
+	<li>
+		see <a href="http://ggajos.com/blog">all posts</a> &middot;
+	</li>
+	<li>
+		or <a href="http://ggajos.com/">home page</a>
+	</li>
+</ul>
+<ul>
+	<li>
+		I won’t tell you that
+		<a href="http://opentangerine.com" rel="nofollow">Open Tangerine</a>
+		team is among the most ingenious and professional engineers.
+	</li>
+</ul>
+            </div>
+        </header>
+        <div class="page-content wc-container">
+
+	<div class="post">
+		<h1>How Hibernate Almost Ruined My Career</h1>
+		<p class="post-meta">
+            
+                <span class="categories">
+                    java and hibernate
+                </span> |
+            
+            <span class="post-date">
+                Sep 27, 2016
+            </span> | Interesting? Share on
+			<a href="https://twitter.com/share?url=http://ggajos.com/how-hibernate-ruined-my-career&amp;text=How Hibernate Almost Ruined My Career by @ggajos"
+   title="Share on Twitter" class="share" rel="nofollow">Twitter</a>,
+<a href="http://www.facebook.com/sharer/sharer.php?u=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on Facebook" class="share" rel="nofollow">Facebook</a>,
+<a href="https://plus.google.com/share?url=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on Google+" class="share" rel="nofollow">Google+</a>,
+<a href="https://www.linkedin.com/cws/share?url=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on LinkedIn" class="share" rel="nofollow">LinkedIn</a>
+		</p>
+		<p>Imagine that you are a Java developer, and you’re about to start your next big project. You need to make the fundamental decisions that will stick with you for the rest of the project. You want to pick the best object-oriented abstraction of your flexible data model because you do not want to deal with plain SQL. You want to support all kinds of data, and ideally, support all sorts of databases.</p>
+
+<p>The obvious answer is to just use <em>Hibernate</em>, right? 90% of Java developers would agree with you, but does that make it the right decision?</p>
+
+<p>Let’s take a look at what can go wrong if you blindly use <em>Hibernate</em> just because it’s the accepted standard.</p>
+
+<p>Consider Monica, a Java developer. Monica has recently been promoted to the role of architect and is now responsible for laying out the technology stack for a new product at her company. She knows that in the Java world there is only one good tool for handling database communication: <em>Hibernate</em>. <em>Hibernate</em> is a well known and supported <a href="https://en.wikipedia.org/wiki/Java_Persistence_API" rel="noopener noreferrer" target="_blank">JPA standard</a>. However, it is always a good idea to check a few things before starting a project. Fortunately, her colleague, Ben, knows the right guy.</p>
+
+<h2 id="years-ago-hibernate-sounds-like-a-silver-bullet">4 Years Ago, Hibernate Sounds Like A Silver Bullet</h2>
+
+<ul>
+  <li><strong>Ben</strong> - Hello Monica, I’d like to introduce John. He’s a <em>Hibernate</em> expert, and he’s going to help you.</li>
+  <li><strong>Monica</strong> - Hey John, glad you found some time for me. So, we are building our Next Big Thing, you know. We are planning on becoming the next Facebook or Google. Busy days. It’s going to be huge. Absolutely fantastic! Everybody is so excited! I’ve been promoted to the role of an architect, so now I have to select the stack we will be using. The only missing part is persistence …</li>
+  <li><strong>John</strong> - <em>Hibernate</em>!</li>
+  <li><strong>Monica</strong> - Yes! Exactly! Just what I was thinking! It seems like a perfect match and the real deal for us. A true enterprise solution for a true enterprise problem, proven by the market and with a long history. I’ve heard so many positive experiences with it. However, I have an issue with one of our teammates; he is totally against it. He knows a lot about databases, and he’s afraid of adding another layer between our application and the database. He is super smart, and I need some really good arguments to convince him this is a good decision. Can you help me with that?</li>
+  <li><strong>John</strong> - Of course! I will be glad to. <em>Hibernate</em> is, indeed, an outstanding tool. It’s widely used in big, true enterprise solutions, like banks. You can’t go wrong with it. Think persistence: Pick <em>Hibernate</em>. If you are writing in Java, this is absolutely the right choice, plus you have ports for other languages. See how many job descriptions require it!</li>
+  <li><strong>Monica</strong> - I absolutely agree! I have the same feelings about it. In a previous project, we were using mostly SQL via plain old JDBC. Ridiculous! I know! But, here’s the thing: We have really smart SQL guys in the team and when they saw SQL generated by <em>Hibernate</em> they got nervous. It seemed ugly and unreadable; will this be a problem in future?</li>
+  <li><strong>John</strong> - Look. DBA guys have a different perspective. They are afraid of <em>Hibernate</em> because it seems to replace their role in the project. Moreover, databases have built-in query optimizers so you don’t need to worry how those queries will actually look. The database will optimize it for you. It’s all about rapid development, which SQL can’t do.</li>
+  <li><strong>Monica</strong> - Really?! No longer dealing with SQL? Amazing! Last time a DBA spent weeks trying to optimize some queries. Weeks! Oh, I feel so embarrassed telling you this, but did you know that we were using … stored procedures (laughing). Oh, it was such a mess. Can you believe the project is still using it? I feel so sorry for people out there. They still have to write this tedious code over and over again. I wonder if it’s still a Java or SQL project?</li>
+  <li><strong>John</strong> - That’s exactly the difference between an object-oriented approach and the relational one. It’s a so-called object-oriented impedance mismatch. <em>Hibernate</em> can close this gap. Developers can focus on building business logic. Push features make stakeholders and the entire management happy. Do the things that matter most: Business! Lots of boilerplate code will disappear, and you’ll have a magical, invisible, but reliable, connection between the logic and the data.</li>
+  <li><strong>Monica</strong> - Mutual cooperation. Full synergy. Like the database was part of the language from the very beginning. I am so happy I get to be a leader of this technological leap of faith. It’s like warp speed in the software trek.</li>
+  <li><strong>John</strong> - Yep! You’ve got it!</li>
+  <li><strong>Monica</strong> - Oh gosh, I’m so excited! Thank you, John! I’m ready!</li>
+</ul>
+
+<h2 id="years-ago-growing-pains-with-non-flexible-solutions">3 Years Ago, Growing Pains With Non-Flexible Solutions</h2>
+
+<ul>
+  <li><strong>Monica</strong> - Hey John, remember the project we spoke about last year?</li>
+  <li><strong>John</strong> - Sure. How’s it going?</li>
+  <li><strong>Monica</strong> - We are going to production soon. Everything is fine, but some questions have popped up.</li>
+  <li><strong>John</strong> - Sure, hit me.</li>
+  <li><strong>Monica</strong> - Well, we can no longer generate our database schema from scratch. What’s the best way to support schema changes without losing data?</li>
+  <li><strong>John</strong> - Well, first, <em>Hibernate</em> isn’t intended to be used as production migration tool. Use something like FlywayDB or Liquibase. It’s pretty simple. You write down migration scripts, then you update the entity model along with the <em>Hibernate</em> mappings, so it keeps in sync with the actual database structure.</li>
+  <li><strong>Monica</strong> - Hmm, I see. We were using just plain SQL migration in the previous project.</li>
+  <li><strong>John</strong> - That’s fine too. As long as you keep the entity model and schema in sync, do it how you like.</li>
+  <li><strong>Monica</strong> - I see. There’s another thing. We’re always struggling with lazy/eager fetching problems. At one point, we decided to do everything eagerly, but it seems suboptimal, and besides, sometimes it’s not possible to access some fields because there is no session, or something like that. Is that normal?</li>
+  <li><strong>John</strong> - You need to learn more about <em>Hibernate</em>. Mapping from the database is not straightforward. Basically, there are multiple ways of doing it. You just need to pick a way that works for you. Lazy fetching gives you the ability to load those objects on demand, but you need to operate within an active session.</li>
+  <li><strong>Monica</strong> - We’re still struggling with which database engine to use for the final deployment. I thought <em>Hibernate</em> was portable, but we have some native queries that use some MS SQL magic, and we’d actually like to go with MySQL in the production.</li>
+  <li><strong>John</strong> - <em>Hibernate</em> gives you flexibility as long as you are using detached criteria or HQL; any native queries will just bind your solution to the database.</li>
+  <li><strong>Monica</strong> - Seems like we have to stick to the MS SQL then. Last question: My teammate said that there is no “limit” keyword in HQL. I thought he was joking, but I couldn’t find it either. Sorry for the stupid question…</li>
+  <li><strong>John</strong> - Indeed, there is no “limit” keyword in HQL. You can control this via query object since it’s database-vendor specific.</li>
+  <li><strong>Monica</strong> - Seems weird that all the other elements are in HQL. Nevermind. Thanks for your time!</li>
+</ul>
+
+<h2 id="years-ago-were-now-hacking-together-solutions-in-sql-again">2 Years Ago, We’re Now Hacking Together Solutions In SQL Again</h2>
+
+<ul>
+  <li><strong>Monica</strong> - John, at the beginning we weren’t going to deal with SQL, but now it seems like we have to. Our needs are growing, and it seems like there’s no way around it. It feels wrong, but we’ve started using SQL again on a daily basis.</li>
+  <li><strong>John</strong> - Well, it’s not wrong. You didn’t have to focus on the database at the very beginning. However, as the project grows, it’s good to use SQL and work on the performance optimization.</li>
+  <li><strong>Monica</strong> - Sometimes we spend days looking for errors. It seems like we have to analyze <em>Hibernate</em>-generated SQL because we have no idea why it’s not working as expected and it’s producing unexpected results. We hit some problems that are well known in the <em>Hibernate</em> bug tracker. Additionally, it’s hard to write proper migrations while keeping the entity model in sync. It’s time-consuming since we need to learn a lot about <em>Hibernate</em> internals and predict how it’ll work.</li>
+  <li><strong>John</strong> - There’s always a learning curve. You don’t have to write much, but you do need to know how it works.</li>
+  <li><strong>Monica</strong> - Working with bigger datasets is also annoying. Recently, we did a massive import to the database, and it was painfully slow. Then we found out that we had to clear the session to make it faster. Even so, it’s still significantly slower, so we decided to rewrite it as plain SQL statements. What’s funny is that writing plain SQL was actually the fastest way of doing it, so we decided to do it as our last option.</li>
+  <li><strong>John</strong> - Import is not an object-oriented process. <em>Hibernate</em> focuses on object-oriented design. Remember that you can always use native queries.</li>
+  <li><strong>Monica</strong> - Can you help me understand how <em>Hibernate</em> cache works? I just don’t get it. There are some first/second level caches. What is this all about?</li>
+  <li><strong>John</strong> - Sure. It’s a so-called transaction-level cache of persistent data. It’s possible to configure a cluster or JVM-level cache on a class-by-class and collection-by-collection basis. You can even plug in a clustered cache. But remember that caches aren’t aware of any changes made to the persistent store by another application. They can, however, be configured to delete expired cached data regularly.</li>
+  <li><strong>Monica</strong> - Sorry, think I’m having a bad day. Can you explain this a bit more?</li>
+  <li><strong>John</strong> - Sure. Whenever you pass an object to <code>save</code>, <code>update</code>, <code>saveOrUpdate</code>, or retrieve it via <code>load</code>, <code>get</code>, <code>list</code>, <code>iterate</code> or <code>scroll</code>, that object is added to the internal cache of the session. You can also remove the object and its collections from the first-level cache.</li>
+  <li><strong>Monica</strong> - Er…</li>
+  <li><strong>John</strong> - Additionally, you can control cache modes. You can use <code>normal</code> mode to read and write items to the second-level cache. Use <code>get</code> mode to read from the second level but you can’t write back. Use <code>put</code>, which is same as <code>get</code> but you can’t read from the second level. You can also use <code>refresh</code> mode, which is going to write to the second level, but not read from it and bypass the <code>use minimal puts</code> property, forcing a refresh of the second-level cache for all items read from the database.</li>
+  <li><strong>Monica</strong> - I see. Ok. Let me think about this. Oh, it’s late, I need to go. Thanks for your time!</li>
+  <li><strong>John</strong> - You’re welcome!</li>
+</ul>
+
+<h2 id="weeks-ago-giving-up-on-hibernate">2 Weeks Ago, Giving Up On Hibernate</h2>
+
+<ul>
+  <li><strong>Monica</strong> - John, I thought we were entering a new era of software development. I thought we were doing a light-year’s jump. But, after four years, it seems like we are still dealing with all the same problems, only from a different angle. I had to learn <em>Hibernate</em> architecture, configuration, logging, naming strategies, tuplizers, entity name resolvers, enhanced identifier generators, identifier generator optimization, union-subclasses, XDoclet markup, bidirectional associations with indexed collections, ternary associations, idbag, mixing implicit polymorphism with other inheritance mappings, replicating object between two different datastores, detached objects and automatic versioning, connection release modes, stateless session interface, taxonomy of collection persistence, cache levels, lazy or eager fetching and many, many more. Even with everything I know, it seems like we’ve failed badly. It’s a software fiasco! Ultimate failure! Disaster! Armageddon!</li>
+  <li><strong>John</strong> - Wait! What happened?</li>
+  <li><strong>Monica</strong> - We’ve reached a dead end. Our application performance is ridiculously slow! To get a report, we have to wait two days! Two days to actually generate a dashboard for a customer. It means every day we have to increase our calculation tail, while our dashboard gets more and more outdated. Our DBA expert has been working two months to optimize some queries, while our database structure is a complete mess. There are developers supporting him, but the problem is the DBA is thinking in SQL, and the developers are spending days trying to translate this into detached criteria or HQL format. We are trying to use native SQL as much as possible since performance is crucial at the moment. Anyway, we can’t do much since the database schema just seems to be wrong. It felt right from the object-oriented perspective, but it seems ridiculous from the relational one. I’m asking myself: How has this happened? The developers are telling us changing the entities structure is going to be a massive effort, so we can’t afford that. I remember in the previous project it was a mess, but we never wound up at such a critical point. We were able to write an entirely different application to work with the data. Now, it’s risky to modify those generated tables since it’s really hard to make sure the entity model will always behave properly. And this isn’t even the worst part! To increase performance, we have to solve not only database issues, but also issues with the entire layer between our database and the application. It’s overwhelming! We have  these new guys, you know, consultants. They are trying to extract data, put it into some other storage and then perform calculations from the outside. It’s all taking too much time!</li>
+  <li><strong>John</strong> - I don’t know what to say.</li>
+  <li><strong>Monica</strong> - You see John; I don’t want to blame you. I picked <em>Hibernate</em> to solve all these problems, but now I’ve learned it’s not a silver bullet. The damage has been done, and it’s irreversible. Actually, I would like to ask you something: I spent the last four years of my career dealing with <em>Hibernate</em> stuff. It seems I do not have a future at my current company. Can you help me?</li>
+</ul>
+
+<h2 id="today-so-whats-the-lesson-learned">Today, So What’s The Lesson Learned?</h2>
+
+<ul>
+  <li><strong>John</strong> - Hey, Peter, let me introduce Monica.</li>
+  <li><strong>Peter</strong> - Hey, Monica! We’re building our new next big thing you know. It is going to be huge! We want to be like Uber! Do you know maybe how persistence…</li>
+  <li><strong>Monica</strong> - Not <em>Hibernate</em>!</li>
+</ul>
+
+<h2 id="wrap-up">Wrap Up</h2>
+
+<p>Monica is a <em>Hibernate</em> expert. However, <em>Hibernate</em> in this instance was a wrong decision. The moment she discovered that her solution turned into a bigger problem than the original, it was the largest threat to the whole project.</p>
+
+<p>Data is the central purpose of the application and, like it or not, affects the entire architecture. As we learned from the story, do <em>not</em> use <em>Hibernate</em> just because your Java application is using a database or because of <a href="https://en.wikipedia.org/wiki/Social_proof" rel="noopener noreferrer" target="_blank">social proof</a>. Pick a solution that embraces flexibility. There are plenty of options for robust JDBC wrappers, such as <a href="http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html" rel="noopener noreferrer" target="_blank">JdbcTemplate</a> or <a href="http://jdbc.jcabi.com/" rel="noopener noreferrer" target="_blank">Fluent JDBC Wrapper</a>. Alternatively, there are other powerful solutions, such as <a href="http://www.jooq.org/" rel="noopener noreferrer" target="_blank">jOOQ</a>.</p>
+
+<p>See what people say about this article on the
+<a href="https://www.toptal.com/java/how-hibernate-ruined-my-career" rel="nofollow">Toptal</a>
+or <a href="https://www.reddit.com/r/java/comments/53p253/how_hibernate_almost_ruined_my_career/" rel="nofollow">Reddit</a>
+page.</p>
+
+		<hr/>
+		<p>
+			Like it? Share it on
+			<a href="https://twitter.com/share?url=http://ggajos.com/how-hibernate-ruined-my-career&amp;text=How Hibernate Almost Ruined My Career by @ggajos"
+   title="Share on Twitter" class="share" rel="nofollow">Twitter</a>,
+<a href="http://www.facebook.com/sharer/sharer.php?u=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on Facebook" class="share" rel="nofollow">Facebook</a>,
+<a href="https://plus.google.com/share?url=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on Google+" class="share" rel="nofollow">Google+</a>,
+<a href="https://www.linkedin.com/cws/share?url=http://ggajos.com/how-hibernate-ruined-my-career"
+   title="Share on LinkedIn" class="share" rel="nofollow">LinkedIn</a>
+		</p>
+	</div>
+
+	
+	<div class="related">
+		<h4>Related Posts</h4>
+		<ul class="posts">
+		    
+		    <li>
+			  <span>19 Sep 2016 &raquo;</span>
+			  <a href="http://ggajos.com/sjug-why-hibernate">Silesia Java User Group, Seriously. Why Hibernate?</a>
+		    </li>
+		    
+		    <li>
+			  <span>14 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/sjug-static-code-analysis">Silesia Java User Group, Static code analysis</a>
+		    </li>
+		    
+		    <li>
+			  <span>06 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/ot-clean-final-version">ot-clean, Final version</a>
+		    </li>
+		    
+		    <li>
+			  <span>04 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/ot-clean-tests-refactoring">ot-clean, Tests refactoring</a>
+		    </li>
+		    
+		    <li>
+			  <span>29 Apr 2016 &raquo;</span>
+			  <a href="http://ggajos.com/ot-clean-refactoring-and-dsl-4">ot-clean, Refactoring and cleaning DSL (4/4)</a>
+		    </li>
+		    
+		</ul>
+	</div>
+	
+
+	<h4>About the author</h4>
+<p>
+    <a href="http://ggajos.com/about">Grzegorz Gajos</a>,
+    Software Architect
+    with international consulting and programming background. Co-founder of Open Tangerine
+    Software House. Quality evangelist. An experienced entrepreneur, out of the box thinker and problem solver.
+</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ggajos';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	<div class="post-footer">
+		<div class="column-1">
+			
+				<a href="http://ggajos.com/sjug-why-hibernate"><< Older</a>
+			
+		</div>
+		<div class="column-2"><a href="http://ggajos.com/ ">Home</a></div>
+		<div class="column-3">
+			
+				<span>Newer >></span>
+			
+		</div>
+	</div>
+</div>
+ 
+
+        <footer>
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Site js -->
+        <script src="/assets/js/all.js"></script>
+        <!-- Google analytics  -->
+        <script type="text/javascript">
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-30132359-4', 'auto');
+    ga('send', 'pageview');
+
+</script>
+    </body>
+</html>

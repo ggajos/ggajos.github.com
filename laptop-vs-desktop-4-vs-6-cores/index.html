@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head itemscope itemtype="http://schema.org/WebPage">
+        <base href="http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Does it make sense to put more cores or switch back to desktop machine in order to increase productivity and make things faster?">
+        <meta name="keywords" content="developer workstation benchmark, maven compilation time, grails compilation time, 4 cores vs 6 cores, java code compilation" />
+        <link rel="canonical" href="http://ggajos.com/laptop-vs-desktop-4-vs-6-cores" />
+        <link rel="alternate" type="application/rss+xml" title="RSS for ggajos.com" href="http://ggajos.com/rss.xml"/>
+        <title>Laptop vs desktop, intel i7 4 vs 6 cores.</title>
+        <!--twitter -->
+        <meta name="twitter:site" content="@ggajos"/>
+        <meta name="twitter:creator" content="@ggajos"/>
+        <meta name="twitter:url" content="http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"/>
+        <!-- facebook -->
+        <meta property="article:author" content="https://www.facebook.com/grzegorz.gajos"/>
+        <meta property="og:url" content="http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"/>
+        <meta property="og:site_name" content="ggajos"/>
+        <meta property="og:title" content="Laptop vs desktop, intel i7 4 vs 6 cores."/>
+        <meta property="og:description" content="Does it make sense to put more cores or switch back to desktop machine in order to increase productivity and make things faster?"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="en_US" />
+        <!-- itemprop -->
+        <meta itemprop="name" content="Laptop vs desktop, intel i7 4 vs 6 cores." />
+        <meta itemprop="author" content="Grzegorz Gajos" />
+        <meta itemprop="breadcrumb" content="http://ggajos.com" />
+        <meta itemprop="keywords" content="developer workstation benchmark, maven compilation time, grails compilation time, 4 cores vs 6 cores, java code compilation" />
+        <meta itemprop="description" content="Does it make sense to put more cores or switch back to desktop machine in order to increase productivity and make things faster?" />
+		<!-- google -->
+		<meta name="google-site-verification" content="Ls52KLW0k11NkXeBx89rhcLnXOfGbaDlNSCkGawXcM4" />
+        <!-- script/css -->
+        <link rel="stylesheet" type="text/css" href="/assets/css/main.css?">
+        <script async src="/assets/js/modernizr.js"></script>
+        <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script> <![endif]-->
+        <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script> <![endif]-->
+    </head>
+    <body class="theme-base-01">
+        <header class="main-header">
+            <div class="wc-container">
+                <h2><a href="/">Java Developer</a></h2>
+                <ul>
+	<li>
+		by <a href="http://ggajos.com/about">Grzegorz Gajos</a> &middot;
+	</li>
+	<li>
+		check <a href="http://ggajos.com/rss.xml">rss feed</a> &middot;
+	</li>
+	<li>
+		see <a href="http://ggajos.com/blog">all posts</a> &middot;
+	</li>
+	<li>
+		or <a href="http://ggajos.com/">home page</a>
+	</li>
+</ul>
+<ul>
+	<li>
+		I won’t tell you that
+		<a href="http://opentangerine.com" rel="nofollow">Open Tangerine</a>
+		team is among the most ingenious and professional engineers.
+	</li>
+</ul>
+            </div>
+        </header>
+        <div class="page-content wc-container">
+
+	<div class="post">
+		<h1>Laptop vs desktop, intel i7 4 vs 6 cores.</h1>
+		<p class="post-meta">
+            
+                <span class="categories">
+                    performance, benchmark, and workstation
+                </span> |
+            
+            <span class="post-date">
+                Oct 15, 2015
+            </span> | Interesting? Share on
+			<a href="https://twitter.com/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores&amp;text=Laptop vs desktop, intel i7 4 vs 6 cores. by @ggajos"
+   title="Share on Twitter" class="share" rel="nofollow">Twitter</a>,
+<a href="http://www.facebook.com/sharer/sharer.php?u=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on Facebook" class="share" rel="nofollow">Facebook</a>,
+<a href="https://plus.google.com/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on Google+" class="share" rel="nofollow">Google+</a>,
+<a href="https://www.linkedin.com/cws/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on LinkedIn" class="share" rel="nofollow">LinkedIn</a>
+		</p>
+		<p>You can find many benchmarks online regarding game performance or 3D rendering speed. However, there is very little information about true impact on software developer work and compilation times. Does it make sense to put more cores or switch back to desktop machine? Will it increase productivity and make things faster?</p>
+
+<h2 id="testing-environment">Testing environment</h2>
+
+<p>For testing purposes I used two machines. Benchmark differences are quite big but does it really matter in day to day work?</p>
+
+<h4 id="desktop">Desktop</h4>
+<ul>
+  <li>CPU: Intel Core i7 5820K (6 cores), <a href="http://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-5820K+%40+3.30GHz&amp;id=2340" rel="nofollow">12,993 points</a> benchmark points</li>
+  <li>MEM: 16GB DDR4 2400Mhz</li>
+  <li>SSD: Samsung 850 Evo 250 GB</li>
+</ul>
+
+<h4 id="laptop">Laptop</h4>
+<ul>
+  <li>CPU: Intel Core i7 2630QM (4 cores), <a href="http://www.cpubenchmark.net/cpu_lookup.php?cpu=Intel+Core+i7-2630QM+%40+2.00GHz&amp;id=873" rel="nofollow">5,568 points</a> benchmark points</li>
+  <li>MEM: 8GB DDR3 1333Mhz</li>
+  <li>SSD: Samsung 840 Pro 256 GB</li>
+</ul>
+
+<h2 id="lets-build-maven-project">Let’s build maven project</h2>
+
+<p>I picked one of the biggest maven projects on which I’m working on. All artifacts have been cached in <code>.m2</code> local repository so there is no internet connection impact on building process. Project contain 36 modules, no tests executed.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>Test device</em></td>
+      <td><em>Build time</em></td>
+    </tr>
+    <tr>
+      <td>Laptop</td>
+      <td>76 seconds</td>
+    </tr>
+    <tr>
+      <td>Desktop</td>
+      <td>30 seconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>I used also <em>-T=8</em> parameter in order to compare parallel build performance.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>Test device</em></td>
+      <td><em>Build time (8 threads)</em></td>
+    </tr>
+    <tr>
+      <td>Laptop</td>
+      <td>38 seconds</td>
+    </tr>
+    <tr>
+      <td>Desktop</td>
+      <td>10 seconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="how-fast-we-can-go-with-grails">How fast we can go with Grails?</h2>
+
+<p>Grails project I’m working on contain multiple inline modules. I used simple <code>grails compile</code> command to execute tests.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>Test device</em></td>
+      <td><em>Build time</em></td>
+    </tr>
+    <tr>
+      <td>Laptop</td>
+      <td>367 seconds</td>
+    </tr>
+    <tr>
+      <td>Desktop</td>
+      <td>192 seconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="how-it-feels-to-work-on-6-cores">How it feels to work on 6 cores?</h2>
+
+<p>Apart from compilation time I must admit that working when something is compiling is huge difference. On laptop machine is hard to make anything else during compilation of big project. Moreover, i7 with full turbo boost is really hot (good for winter only). On desktop on the other hand there is no problem to even run another compilation or work on different killer project. This is probably main benefit of 6 cores in this comparison and benefit for my daily work. I noticed that hardware is actually getting more expensive lately <a href="https://pcpartpicker.com/trends/price/cpu/#cpu.intel.lga1155.core-i7.ivy_bridge" rel="nofollow">source</a> so it might be good moment to setup solid workstation.</p>
+
+		<hr/>
+		<p>
+			Like it? Share it on
+			<a href="https://twitter.com/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores&amp;text=Laptop vs desktop, intel i7 4 vs 6 cores. by @ggajos"
+   title="Share on Twitter" class="share" rel="nofollow">Twitter</a>,
+<a href="http://www.facebook.com/sharer/sharer.php?u=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on Facebook" class="share" rel="nofollow">Facebook</a>,
+<a href="https://plus.google.com/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on Google+" class="share" rel="nofollow">Google+</a>,
+<a href="https://www.linkedin.com/cws/share?url=http://ggajos.com/laptop-vs-desktop-4-vs-6-cores"
+   title="Share on LinkedIn" class="share" rel="nofollow">LinkedIn</a>
+		</p>
+	</div>
+
+	
+	<div class="related">
+		<h4>Related Posts</h4>
+		<ul class="posts">
+		    
+		    <li>
+			  <span>27 Sep 2016 &raquo;</span>
+			  <a href="http://ggajos.com/how-hibernate-ruined-my-career">How Hibernate Almost Ruined My Career</a>
+		    </li>
+		    
+		    <li>
+			  <span>19 Sep 2016 &raquo;</span>
+			  <a href="http://ggajos.com/sjug-why-hibernate">Silesia Java User Group, Seriously. Why Hibernate?</a>
+		    </li>
+		    
+		    <li>
+			  <span>14 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/sjug-static-code-analysis">Silesia Java User Group, Static code analysis</a>
+		    </li>
+		    
+		    <li>
+			  <span>06 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/ot-clean-final-version">ot-clean, Final version</a>
+		    </li>
+		    
+		    <li>
+			  <span>04 May 2016 &raquo;</span>
+			  <a href="http://ggajos.com/ot-clean-tests-refactoring">ot-clean, Tests refactoring</a>
+		    </li>
+		    
+		</ul>
+	</div>
+	
+
+	<h4>About the author</h4>
+<p>
+    <a href="http://ggajos.com/about">Grzegorz Gajos</a>,
+    Software Architect
+    with international consulting and programming background. Co-founder of Open Tangerine
+    Software House. Quality evangelist. An experienced entrepreneur, out of the box thinker and problem solver.
+</p>
+
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'ggajos';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+	<div class="post-footer">
+		<div class="column-1">
+			
+				<span><< Older</span>
+			
+		</div>
+		<div class="column-2"><a href="http://ggajos.com/ ">Home</a></div>
+		<div class="column-3">
+			
+				<a href="http://ggajos.com/environment-variables-management">Newer >></a>
+			
+		</div>
+	</div>
+</div>
+ 
+
+        <footer>
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Site js -->
+        <script src="/assets/js/all.js"></script>
+        <!-- Google analytics  -->
+        <script type="text/javascript">
+
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-30132359-4', 'auto');
+    ga('send', 'pageview');
+
+</script>
+    </body>
+</html>
