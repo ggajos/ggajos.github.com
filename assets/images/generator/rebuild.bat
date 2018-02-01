@@ -1,1 +1,0 @@
-call generate "Laptop vs desktop\nintel i7 4 vs 6 cores" "2015-11-01"
