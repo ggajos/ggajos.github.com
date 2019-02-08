@@ -13,3 +13,8 @@ ul.collection,
 .collection.with-header li.collection-item {
     border: none;
 }
+
+h1, h2 {
+    font-size: 1.68rem;
+    line-height: 1.5;
+}
